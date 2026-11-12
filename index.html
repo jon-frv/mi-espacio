@@ -1869,6 +1869,88 @@ button .ic.svg-ic { pointer-events: none; }
 }
 </style>
 
+
+<style id="nav-larger-horizontal-swipe-fix">
+/* Barra inferior un poco más alta y con iconos más cómodos al tacto */
+#nav {
+  min-height:66px !important;
+  padding-top:9px !important;
+  padding-bottom:calc(9px + env(safe-area-inset-bottom,0px)) !important;
+  align-items:center !important;
+}
+#nav button {
+  min-height:48px !important;
+  padding:10px 6px !important;
+}
+#nav button > b {
+  width:30px !important;
+  height:30px !important;
+}
+#nav button .ic,
+#nav button svg {
+  width:25px !important;
+  height:25px !important;
+}
+@media(max-width:799px) {
+  #nav {
+    min-height:72px !important;
+    padding-top:10px !important;
+    padding-bottom:calc(10px + env(safe-area-inset-bottom,0px)) !important;
+  }
+}
+
+/* Carrusel de cuentas: gesto horizontal más natural en pantallas táctiles */
+.accs {
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:stretch !important;
+  gap:12px !important;
+  width:auto !important;
+  max-width:none !important;
+  max-height:none !important;
+  overflow-x:scroll !important;
+  overflow-y:hidden !important;
+  padding:8px 20px 18px !important;
+  margin:0 -20px !important;
+  scroll-snap-type:x proximity !important;
+  scroll-behavior:smooth !important;
+  overscroll-behavior-x:contain !important;
+  overscroll-behavior-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+  scrollbar-width:none !important;
+  touch-action:pan-x pan-y !important;
+  cursor:grab;
+}
+.accs::-webkit-scrollbar { display:none !important; }
+.accs .ac2.bank-card {
+  flex:0 0 min(290px,80vw) !important;
+  width:min(290px,80vw) !important;
+  min-width:min(290px,80vw) !important;
+  max-width:min(290px,80vw) !important;
+  min-height:176px !important;
+  margin:0 !important;
+  scroll-snap-align:start !important;
+  scroll-snap-stop:normal !important;
+  touch-action:pan-x pan-y !important;
+  user-select:none !important;
+  -webkit-user-select:none !important;
+}
+@media(min-width:800px) {
+  .accs {
+    margin:0 !important;
+    padding-left:4px !important;
+    padding-right:4px !important;
+  }
+  .accs .ac2.bank-card {
+    flex-basis:300px !important;
+    width:300px !important;
+    min-width:300px !important;
+    max-width:300px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav id="nav"></nav>
