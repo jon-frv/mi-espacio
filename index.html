@@ -1674,6 +1674,201 @@ button .ic.svg-ic { pointer-events: none; }
 }
 </style>
 
+
+<style id="bottom-nav-icons-only">
+/* Barra inferior: mostrar solo iconos, conservar accesibilidad y estado activo */
+#nav button {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:0 !important;
+  min-width:0 !important;
+  padding:10px 6px !important;
+}
+#nav button > span {
+  display:none !important;
+}
+#nav button > b {
+  display:grid !important;
+  place-items:center !important;
+  margin:0 !important;
+}
+#nav button.on {
+  color:var(--tc,var(--ac)) !important;
+}
+#nav button.on > b {
+  color:var(--tc,var(--ac)) !important;
+}
+#nav button > i {
+  position:absolute;
+  transform:translate(13px,-11px);
+}
+</style>
+
+
+<style id="finance-horizontal-cards-clean-fields">
+/* Finanzas: tarjetas en carrusel horizontal */
+.accs {
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:stretch !important;
+  gap:14px !important;
+  max-height:none !important;
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  padding:8px 4px 18px !important;
+  scroll-snap-type:x mandatory !important;
+  overscroll-behavior-x:contain;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.accs::-webkit-scrollbar { display:none; }
+.accs .ac2.bank-card {
+  flex:0 0 min(300px,82vw) !important;
+  width:min(300px,82vw) !important;
+  min-width:min(300px,82vw) !important;
+  min-height:176px !important;
+  margin:0 !important;
+  scroll-snap-align:start !important;
+  scroll-snap-stop:always;
+}
+@media(min-width:800px) {
+  .accs .ac2.bank-card {
+    flex-basis:300px !important;
+    width:300px !important;
+    min-width:300px !important;
+  }
+}
+/* Quitar los fondos de los campos de captura dentro de formularios */
+#hpb .fg,
+#hpb .fg .fr,
+#hpb .fg .fr input:not([type="color"]),
+#hpb .fg .fr select,
+#hpb .fg .fr textarea,
+#hpb input:not([type="color"]):not(.ttl):not(.tg),
+#hpb select,
+#hpb textarea {
+  background:transparent !important;
+  box-shadow:none !important;
+}
+#hpb .fg {
+  border:0 !important;
+  padding:0 !important;
+}
+#hpb .fg .fr input:not([type="color"]),
+#hpb .fg .fr select,
+#hpb .fg .fr textarea {
+  border:0 !important;
+  border-bottom:1px solid var(--bd) !important;
+  border-radius:0 !important;
+  padding:9px 2px !important;
+}
+#hpb .fg .fr input:focus,
+#hpb .fg .fr select:focus,
+#hpb .fg .fr textarea:focus {
+  outline:none !important;
+  border-bottom:2px solid var(--ac) !important;
+}
+</style>
+
+
+<style id="bank-card-no-internal-id">
+.bank-card-bottom {
+  justify-content:flex-start !important;
+}
+.bank-card-bottom > span:last-child:empty {
+  display:none !important;
+}
+</style>
+
+
+<style id="all-data-entry-fields-transparent">
+/* Campos de captura: quitar el relleno/fondo y conservar solo el subrayado */
+#hpb input:not([type="color"]),
+#hpb select,
+#hpb textarea,
+.hpb input:not([type="color"]),
+.hpb select,
+.hpb textarea,
+#hpb .fr input,
+.hpb .fr input,
+#hpb .fr select,
+.hpb .fr textarea {
+  background:transparent !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+  box-shadow:none !important;
+}
+#hpb .fr input:not([type="color"]),
+.hpb .fr input:not([type="color"]),
+#hpb .fr select,
+.hpb .fr select,
+#hpb .fr textarea,
+.hpb .fr textarea {
+  border:0 !important;
+  border-bottom:1px solid var(--bd) !important;
+  border-radius:0 !important;
+  padding:9px 2px !important;
+}
+#hpb .fr input:focus,
+.hpb .fr input:focus,
+#hpb .fr select:focus,
+.hpb .fr select:focus,
+#hpb .fr textarea:focus,
+.hpb .fr textarea:focus {
+  outline:none !important;
+  border-bottom:2px solid var(--ac) !important;
+}
+</style>
+
+
+<style id="notes-help-button-corner">
+/* Botón de ayuda de Notas alineado en la esquina superior derecha */
+.notes-heading {
+  position:relative !important;
+  display:flex !important;
+  align-items:flex-start !important;
+  justify-content:space-between !important;
+  width:100% !important;
+  min-height:36px !important;
+  padding-right:0 !important;
+}
+.notes-heading > div {
+  width:100%;
+  padding-right:44px;
+}
+.notes-heading .hq {
+  position:absolute !important;
+  top:0 !important;
+  right:0 !important;
+  margin:0 !important;
+}
+</style>
+
+
+<style id="notes-search-single-background">
+/* Búsqueda de Notas: un solo contenedor visual, sin segundo fondo en el input */
+.notes-search {
+  background:var(--fill) !important;
+  border:1px solid var(--bd) !important;
+  box-shadow:none !important;
+  padding:0 10px !important;
+}
+.notes-search input,
+.notes-search input:focus {
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+  outline:none !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+}
+.notes-search:focus-within {
+  border-color:color-mix(in srgb,var(--ac) 55%,var(--bd)) !important;
+}
+</style>
+
 </head>
 <body>
 <nav id="nav"></nav>
@@ -1767,7 +1962,7 @@ const accTot=()=>{let av=0,db=0;S.acc.forEach(a=>{const b=accBal(a);b>=0?av+=b:d
 const accName=id=>{const a=S.acc.find(x=>x.id===id);return a?esc(a.name):'—'};
 const achips=(id,sel)=>`<div class='chips' id='g-${id}'><input type='hidden' id='${id}' value='${sel}'>${S.acc.map(a=>`<button type='button' class='chip ${a.id===sel?'on':''}' data-act='chip' data-g='${id}' data-v='${a.id}'>${ic(AI[a.type]||'wallet',16)}<span>${esc(a.name)}</span></button>`).join('')}</div>`;
 const lbl=t=>`<div style='color:var(--mu);font-size:12.5px;margin-top:8px'>${t}</div>`;
-function accSec(){const [av,db]=accTot(),x=[...S.xfer].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,15);return `<h2>${ic('card',17)} Mis cuentas</h2>`+(S.acc.length?`<div class='accs' id='accountDeck'>${S.acc.map((a,k)=>{const b=accBal(a);return `<div class='ac2 bank-card bank-${k%4}' style='--bank:${a.color||['#2463d4','#202a3a','#16866b','#7548c8'][k%4]}' draggable='true' data-acc-drag='${a.id}' data-act='editAcc' data-i='${a.id}'><div class='bank-card-top'><span class='bank-brand'>${esc(a.type==='Crédito'?'CREDIT':a.type.toUpperCase())}</span><span class='bank-chip'>▦</span></div><div class='bank-card-name'>${esc(a.name)}</div><div class='bal ${b<0&&!S.hide?'neg':''}'>${mny(b)}</div><div class='bank-card-bottom'><span>${a.type==='Crédito'?(b<0?'Deuda':'A favor'):'SALDO DISPONIBLE'}</span><span>${String(a.id).slice(-4).toUpperCase()}</span></div><div class='bank-card-controls'><button class='bank-move' data-act='moveAcc' data-i='${a.id}' data-v='-1' aria-label='Mover a la izquierda'>‹</button><span>Arrastra para ordenar</span><button class='bank-move' data-act='moveAcc' data-i='${a.id}' data-v='1' aria-label='Mover a la derecha'>›</button></div></div>`}).join('')}</div>`:`<div class='card'><div class='empty'>Aún no tienes cuentas.</div></div>`)+`<div class='row'><button class='b p' data-act='addAcc'>＋ Nueva cuenta</button></div>`+(S.acc.length>1?`<h2>${ic('repeat',17)} Transferencias</h2>`+(x.length?`<div class='tw'><table><tr><th>Fecha</th><th>De</th><th>A</th><th class='r'>Monto</th><th></th></tr>${x.map(m=>`<tr><td>${m.date.split('-').reverse().slice(0,2).join('/')}</td><td>${accName(m.from)}</td><td>${accName(m.to)}</td><td class='r'><b>${money(m.amt)}</b></td><td><button class='x' data-act='delXf' data-i='${m.id}' aria-label='Borrar'>×</button></td></tr>`).join('')}</table></div>`:''):'')}
+function accSec(){const [av,db]=accTot(),x=[...S.xfer].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,15);return `<h2>${ic('card',17)} Mis cuentas</h2>`+(S.acc.length?`<div class='accs' id='accountDeck'>${S.acc.map((a,k)=>{const b=accBal(a);return `<div class='ac2 bank-card bank-${k%4}' style='--bank:${a.color||['#2463d4','#202a3a','#16866b','#7548c8'][k%4]}' draggable='true' data-acc-drag='${a.id}' data-act='editAcc' data-i='${a.id}'><div class='bank-card-top'><span class='bank-brand'>${esc(a.type==='Crédito'?'CREDIT':a.type.toUpperCase())}</span><span class='bank-chip'>▦</span></div><div class='bank-card-name'>${esc(a.name)}</div><div class='bal ${b<0&&!S.hide?'neg':''}'>${mny(b)}</div><div class='bank-card-bottom'><span>${a.type==='Crédito'?(b<0?'Deuda':'A favor'):'SALDO DISPONIBLE'}</span><span></span></div><div class='bank-card-controls'><button class='bank-move' data-act='moveAcc' data-i='${a.id}' data-v='-1' aria-label='Mover a la izquierda'>‹</button><span>Arrastra para ordenar</span><button class='bank-move' data-act='moveAcc' data-i='${a.id}' data-v='1' aria-label='Mover a la derecha'>›</button></div></div>`}).join('')}</div>`:`<div class='card'><div class='empty'>Aún no tienes cuentas.</div></div>`)+`<div class='row'><button class='b p' data-act='addAcc'>＋ Nueva cuenta</button></div>`+(S.acc.length>1?`<h2>${ic('repeat',17)} Transferencias</h2>`+(x.length?`<div class='tw'><table><tr><th>Fecha</th><th>De</th><th>A</th><th class='r'>Monto</th><th></th></tr>${x.map(m=>`<tr><td>${m.date.split('-').reverse().slice(0,2).join('/')}</td><td>${accName(m.from)}</td><td>${accName(m.to)}</td><td class='r'><b>${money(m.amt)}</b></td><td><button class='x' data-act='delXf' data-i='${m.id}' aria-label='Borrar'>×</button></td></tr>`).join('')}</table></div>`:''):'')}
 const iso=d=>new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);let G='';
 const dr=(a,b)=>{const o=[];for(let k=a;k<b;k++){const d=new Date();d.setDate(d.getDate()-k);o.push(iso(d))}return o};
 const evOn=d=>S.events.filter(e=>e.date===d||(e.rep&&d>e.date&&(e.rep==='diario'||(e.rep==='semanal'&&new Date(d+'T12:00').getDay()===new Date(e.date+'T12:00').getDay())||(e.rep==='mensual'&&d.slice(8)===e.date.slice(8))||(e.rep==='anual'&&d.slice(5)===e.date.slice(5)))));
