@@ -214,20 +214,22 @@ div[style*="margin-bottom:10px"]>.stat{--ac:#5cc0ff;background:linear-gradient(1
 
 nav button.on .f{fill-opacity:.4}
 
-/* ---------- clima ---------- */
-.wx{margin:0 0 14px;padding:18px;border-radius:30px;color:#fff;--mu:rgba(255,255,255,.72);border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 34px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.16);position:relative;overflow:hidden;background:linear-gradient(160deg,#1f7be0,#0b3f8f)}
+/* ---------- clima (misma altura que "Tu día") ---------- */
+.dayc{height:176px;margin-bottom:14px}
+.wx{height:176px;margin:0 0 14px;padding:14px;border-radius:30px;color:#fff;--mu:rgba(255,255,255,.74);border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 34px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.16);position:relative;overflow:hidden;display:flex;gap:10px;align-items:stretch;background:linear-gradient(160deg,#1f7be0,#0b3f8f)}
 .wx-clear{background:radial-gradient(70% 90% at 92% 0,rgba(255,214,10,.4),transparent 60%),linear-gradient(160deg,#2b86ea,#0c3f94)}
 .wx-cloud{background:radial-gradient(70% 90% at 92% 0,rgba(255,255,255,.14),transparent 60%),linear-gradient(160deg,#53647f,#232c40)}
 .wx-rain{background:linear-gradient(160deg,#33527f,#121c36)}.wx-storm{background:radial-gradient(70% 90% at 92% 0,rgba(255,214,10,.18),transparent 60%),linear-gradient(160deg,#4d3d80,#17122e)}
 .wx-snow{background:linear-gradient(160deg,#6f90b8,#2d405a)}.wx-fog{background:linear-gradient(160deg,#627080,#2a323a)}.wx-night{background:radial-gradient(60% 80% at 90% 0,rgba(130,150,255,.25),transparent 60%),linear-gradient(160deg,#18265a,#070a1c)}
 .wx>*{position:relative}.wx .wi{display:inline-flex;color:#fff}.wx .f{fill-opacity:.22}
-.wx-empty{display:flex;align-items:center;gap:14px;cursor:pointer}.wx-empty b{display:block;font-size:17px}.wx-empty small{color:var(--mu)}
-.wx-top{display:flex;justify-content:space-between;align-items:center}
-.wx-loc{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font:inherit;font-size:12.5px;font-weight:700;padding:6px 12px;cursor:pointer}
-.wx-now{display:flex;align-items:center;justify-content:space-between;margin:6px 0 14px}.wx-t{font-size:56px;font-weight:800;letter-spacing:-.04em;line-height:1}.wx-c{color:var(--mu);font-weight:600;margin-top:4px}
-.wx-days{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.wx-d{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px 10px;border-radius:22px;background:rgba(255,255,255,.09)}.wx-d.on{background:rgba(255,255,255,.2)}
-.wx-n{font-size:12.5px;font-weight:700;text-transform:capitalize;color:var(--mu)}.wx-d b{font-size:18px;font-weight:800;margin-top:2px}.wx-d small{color:var(--mu);font-size:13px}.wx-d em{font-style:normal;font-size:11px;font-weight:700;color:#9fd6ff;display:flex;align-items:center;gap:2px;min-height:14px}
+.wx-empty{align-items:center;gap:14px;cursor:pointer}.wx-empty b{display:block;font-size:17px}.wx-empty small{color:var(--mu)}
+.wx-l{flex:0 0 39%;min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+.wx-loc{display:inline-flex;align-items:center;gap:5px;max-width:100%;border:0;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font:inherit;font-size:11.5px;font-weight:700;padding:5px 10px;cursor:pointer;align-self:flex-start}.wx-loc span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wx-now{display:flex;align-items:center;gap:6px}.wx-t{font-size:42px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.wx-c{color:var(--mu);font-weight:600;font-size:12.5px;line-height:1.25;margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.wx-days{flex:1;min-width:0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.wx-d{display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:10px 2px 8px;border-radius:18px;background:rgba(255,255,255,.09);min-width:0}.wx-d.on{background:rgba(255,255,255,.2)}
+.wx-n{font-size:12px;font-weight:700;text-transform:capitalize;color:var(--mu)}.wx-d b{font-size:16px;font-weight:800}.wx-d small{color:var(--mu);font-size:12px}.wx-d em{font-style:normal;font-size:10.5px;font-weight:700;color:#9fd6ff;display:flex;align-items:center;gap:2px;min-height:13px}
 
 /* ---------- Atlas: perfil, pendientes, paginación ---------- */
 #prof{position:fixed;z-index:6;top:calc(12px + env(safe-area-inset-top,0px));right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--gb);background:color-mix(in srgb,var(--card) 80%,transparent);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);color:var(--tx);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.35),inset 0 1px 0 var(--gh);padding:0;transition:transform .2s}
@@ -1204,8 +1206,8 @@ function wxInfo(c,day=1){if(c===0)return day?['Despejado','sun','clear']:['Despe
 function wxCard(){const w=wxGet();
  if(!w||!w.d)return `<div class="wx wx-cloud wx-empty" data-act="wxLoc"><span class="wi">${ic('cloud-sun',30)}</span><div><b>Clima</b><small>${WXS==='err'?'No pude obtener el clima. Toca para reintentar':'Cargando el clima…'}</small></div></div>`;
  const [lab,icn,k]=wxInfo(w.cur.code,w.cur.day);
- const days=w.d.slice(0,3).map((x,i)=>{const [l,ii]=wxInfo(x.code);const nm=i===0?'Hoy':new Date(x.date+'T12:00').toLocaleDateString('es-MX',{weekday:'short'}).replace('.','');return `<div class="wx-d ${i?'':'on'}"><span class="wx-n">${nm}</span><span class="wi">${ic(ii,28)}</span><b>${x.max}°</b><small>${x.min}°</small><em>${x.pop>=20?ic('drop',11)+x.pop+'%':'&nbsp;'}</em></div>`}).join('');
- return `<div class="wx wx-${k}"><div class="wx-top"><button class="wx-loc" data-act="wxLoc" aria-label="Usar mi ubicación">${ic('pin',14)}${esc(w.place)}</button></div><div class="wx-now"><div><div class="wx-t">${w.cur.t}°</div><div class="wx-c">${lab}</div></div><span class="wi">${ic(icn,64)}</span></div><div class="wx-days">${days}</div></div>`}
+ const days=w.d.slice(0,3).map((x,i)=>{const [l,ii]=wxInfo(x.code);const nm=i===0?'Hoy':new Date(x.date+'T12:00').toLocaleDateString('es-MX',{weekday:'short'}).replace('.','');return `<div class="wx-d ${i?'':'on'}"><span class="wx-n">${nm}</span><span class="wi">${ic(ii,26)}</span><b>${x.max}°</b><small>${x.min}°</small><em>${x.pop>=20?ic('drop',11)+x.pop+'%':'&nbsp;'}</em></div>`}).join('');
+ return `<div class="wx wx-${k}"><div class="wx-l"><button class="wx-loc" data-act="wxLoc" aria-label="Usar mi ubicación">${ic('pin',13)}<span>${esc(w.place)}</span></button><div><div class="wx-now"><span class="wx-t">${w.cur.t}°</span><span class="wi">${ic(icn,34)}</span></div><div class="wx-c">${lab}</div></div></div><div class="wx-days">${days}</div></div>`}
 async function wxLoad(force){const w=wxGet();if(WXB||(!force&&w&&w.d&&Date.now()-w.t<18e5))return;WXB=1;WXS='load';
  try{let loc=wxLocGet();
   if(!loc){const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';const nm=tz.split('/').pop().replace(/_/g,' ');
@@ -1227,7 +1229,7 @@ function pgClamp(total,n,p){return Math.min(Math.max(0,p),Math.max(0,Math.ceil(t
 function xferSec(){const all=[...S.xfer].sort((a,b)=>b.date.localeCompare(a.date));if(S.acc.length<2&&!all.length)return '';XFP=pgClamp(all.length,XFN,XFP);const x=all.slice(XFP*XFN,XFP*XFN+XFN);
  return `<h2>${ic('repeat',17)} Transferencias</h2>`+(x.length?`<div class='tw'><table><tr><th>Fecha</th><th>De</th><th>A</th><th class='r'>Monto</th><th></th></tr>${x.map(m=>`<tr><td>${m.date.split('-').reverse().slice(0,2).join('/')}</td><td>${accName(m.from)}</td><td>${accName(m.to)}</td><td class='r'><b>${money(m.amt)}</b></td><td><button class='x' data-act='delXf' data-i='${m.id}' aria-label='Borrar'>×</button></td></tr>`).join('')}</table></div>`+pager('xf',all.length,XFN,XFP):`<div class="card"><div class="empty">Aún no hay transferencias.</div></div>`)}
 function undRows(){const u=[];S.areas.forEach(a=>a.items.forEach(i=>{if(i.kind==='recordatorio'&&!i.date&&!i.done&&i.pri!=='urgente')u.push(row(a,i))}));return u}
-function dayList(pend){const all=[...urg().map(x=>({t:x.i.text,u:1})),...[...pend].sort((a,b)=>a.r-b.r).map(x=>({t:x.t}))];if(!all.length)return `<div class="dl-e">Sin pendientes por hoy</div>`;return all.slice(0,4).map(x=>`<div class="dl${x.u?' u':''}"><i></i><span>${esc(x.t)}</span></div>`).join('')+(all.length>4?`<div class="dl-m">+${all.length-4} más</div>`:'')}
+function dayList(pend){const all=[...urg().map(x=>({t:x.i.text,u:1})),...[...pend].sort((a,b)=>a.r-b.r).map(x=>({t:x.t}))];if(!all.length)return `<div class="dl-e">Sin pendientes por hoy</div>`;return all.slice(0,3).map(x=>`<div class="dl${x.u?' u':''}"><i></i><span>${esc(x.t)}</span></div>`).join('')+(all.length>3?`<div class="dl-m">+${all.length-3} más</div>`:'')}
 function catBlock(){const m=fmo(),by={};S.tx.filter(t=>t.date.startsWith(m)&&t.type!=='ingreso').forEach(t=>by[t.cat]=(by[t.cat]||0)+t.amt);const mx=Math.max(0,...Object.values(by)),pby={};S.tx.filter(t=>t.date.startsWith(prevYm())&&t.type!=='ingreso').forEach(t=>pby[t.cat]=(pby[t.cat]||0)+t.amt);
  return `<h2 style="margin-top:0">${ic('target',17)} Gastos por categoría · ${mAb(m)}</h2>`+(Object.keys(by).length?`<div style="margin-top:6px">${Object.entries(by).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`<div style="padding:8px 0"><div style="display:flex;justify-content:space-between;gap:10px"><span>${ic(CATI[c]||'dots',16)} ${esc(c)}</span><span>${money(v)}${S.budget[c]?' / '+money(S.budget[c]):''}</span></div>${bar(v,S.budget[c]||mx,S.budget[c]&&v>=S.budget[c]*.9?'var(--bad)':'')}${cmpTag(v,pby[c]||0,0)}</div>`).join('')}</div>`:'<div class="empty">Aún no hay gastos este mes.</div>')}
 function habChart(){if(!S.habits.length)return '';const rows=S.habits.map(x=>{const dd=Math.max(0,Math.floor((new Date(td())-new Date(x.since))/864e5));return {n:x.name,dd,best:Math.max(x.best||0,dd),s:x.slips||0}}),mx=Math.max(1,...rows.map(r=>r.best));
